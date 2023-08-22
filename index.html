@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petit bac generator</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <h1>Petit bac generator</h1>
+
+    <main>
+        <div class="settings">
+            <h2>Paramètres</h2>
+
+            <div class="content">
+                <label for="category">Catégories</label>
+                <br>
+                <div class="category-switch" id="categorySwitchContainer">
+                    <!-- Buttons will be added here dynamically -->
+                </div>
+                <br>
+                <div class="action">
+                    <button id="selectAllCategories" class="blueButton">Tous</button>
+                    <button id="removeAllCategories" class="redButton">Aucun</button>
+                </div>
+
+                <br>
+                <br>
+
+                <label for="nbCategory">Nombre de catégorie (aléatoire sur les catégories sélectionnés)</label>
+                <br>
+                <div id="output">Quantité : 1</div>
+                <br>
+                <input id="rangeInput" type="range" min="1" max="1" step="1" value="1">
+            </div>
+        </div>
+
+        <div class="action">
+            <button class="generateButton greenButton" onclick="onGenerateLetter()">Générer une lettre </button>
+            <button class="generateButton greenButton" onclick="onGenerateCategory()">Générer les catégories</button>
+        </div>
+
+        <div class="result">
+            <h2>Résultat</h2>
+
+            <div class="content">
+                <label for="letterChoice">Lettre généré</label>
+                <br>
+                <div id="letterOutput"></div>
+                <br>
+                <label for="categories">Catégories sélectionnées</label>
+                <ul id="selectedCategories"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const rangeInput = document.getElementById("rangeInput");
+        const output = document.getElementById("output");
+
+        rangeInput.addEventListener("input", () => {
+            refreshNbCategoryOutput()
+        });
+
+        function refreshNbCategoryOutput() {
+            const value = rangeInput.value;
+            output.textContent = `Quantité : ${value}`;
+        }
+    </script>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
