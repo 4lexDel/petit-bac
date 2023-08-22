@@ -2,12 +2,14 @@ body {
     background-color: rgb(67, 67, 67);
     margin: 0;
     width: 100%;
+    overflow-x: hidden;
 }
 
-main {
+
+/* main {
     margin: 0;
     width: 100%;
-}
+} */
 
 h1 {
     text-align: center;
@@ -59,7 +61,6 @@ main>* {
     margin: 20px;
 }
 
-main,
 .result,
 .settings {
     width: 80vw;
@@ -75,10 +76,22 @@ main,
     align-items: center;
 }
 
+.action {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 .settings {
     background-color: rgb(178, 178, 178);
     padding: 20px;
     border-radius: 20px;
+}
+
+#categorySwitchContainer {
+    max-height: 200px;
+    overflow-y: auto;
 }
 
 .result {
